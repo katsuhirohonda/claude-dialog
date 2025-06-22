@@ -6,7 +6,7 @@ edition = "2024"
 authors = ["Katsuhiro Honda<freewave3@gmail.com>"]
 description = "Interactive CLI for Claude conversations with custom system prompts"
 license = "MIT"
-repository = "https://github.com/yourusername/claude-dialog"
+repository = "https://github.com/katsuhirohonda/claude-dialog"
 keywords = ["claude", "ai", "cli", "dialog", "interactive"]
 categories = ["command-line-utilities"]
 
