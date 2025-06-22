@@ -5,7 +5,8 @@ use anyhow::{Result, anyhow};
 #[command(
     name = "claude-dialog",
     about = "Interactive CLI for Claude conversations with custom system prompts",
-    long_about = None
+    long_about = None,
+    version
 )]
 pub struct Args {
     /// Custom system prompt files (can be specified multiple times)
