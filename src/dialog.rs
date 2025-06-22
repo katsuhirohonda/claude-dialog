@@ -1,6 +1,7 @@
 use anyhow::Result;
 use std::io::{self, BufRead, BufReader, Read, Write};
 use crate::claude_executor::{ClaudeCommand, execute_claude};
+use crate::ui::UI;
 
 #[derive(Debug, Clone)]
 pub struct DialogConfig {
@@ -42,7 +43,7 @@ impl DialogLoop {
         
         loop {
             // Show prompt
-            print!("> ");
+            UI::print_user_prompt();
             stdout.flush()?;
             
             // Read input
@@ -57,9 +58,12 @@ impl DialogLoop {
             
             // Check for exit command
             if self.is_exit_command(input) {
-                println!("Exiting...");
+                UI::print_exit_message();
                 break;
             }
+            
+            // Show Claude prompt
+            UI::print_claude_prompt();
             
             // Execute Claude command
             let command = ClaudeCommand {
